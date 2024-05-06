@@ -1,5 +1,9 @@
 # Mind-Animator
 
-- [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
+- [x] Reorganize all the code.
+- [ ] Test the data preprocessing code for Mind-Animator.
+- [ ] Upload the data preprocessing code for Mind-Animator.
+- [ ] Test the project code for Mind-Animator.
+- [ ] Upload the project code for Mind-Animator.
+- [ ] Release the reconstruction results of Mind-Animator on all test sets.
+- [ ] Release the checkpoints of Mind-Animator.
