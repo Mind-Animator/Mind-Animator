@@ -1,7 +1,7 @@
 # Mind-Animator
 ## TODOList
 - [x] Reorganize all the code.
-- [ ] Test the data preprocessing code for CC2017 dataset.
+- [x] Test the data preprocessing code for CC2017 dataset.
 - [ ] Upload the data preprocessing code for CC2017 dataset.
 - [ ] Test the project code for Mind-Animator.
 - [ ] Upload the project code for Mind-Animator.
