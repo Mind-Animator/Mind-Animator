@@ -38,7 +38,7 @@ This code was developed and tested with:
 ```
 
 ```
-    get_video_frames.py --Train_videopath_root "path/to/Train_video_path" --Train_target_root "path/to/Train_frames_path" --Test_videopath_root "path/to/Test_video_path" --Test_target_root "path/to/Test_frames_path"
+    python get_video_frames.py --Train_videopath_root "path/to/Train_video_path" --Train_target_root "path/to/Train_frames_path" --Test_videopath_root "path/to/Test_video_path" --Test_target_root "path/to/Test_frames_path"
 ```
 
  
@@ -46,9 +46,8 @@ This code was developed and tested with:
 ```
 cd path/to/BLIP2
 conda activate BLIP2
-video_captioning.py
+python video_captioning.py --Train_video_path_root "path/to/Train_frames_path" --Train_captions_save_path "path/to/Train_frames_path" --Test_video_path_root "path/to/Test_frames_path" --Test_captions_save_path "path/to/Test_frames_path"
 conda deactivate BLIP2
-
 ```
 
 
