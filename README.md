@@ -15,7 +15,14 @@ This code was developed and tested with:
 *  Python version 3.9.16 
 *  PyTorch version 1.12.1 
 *  A100 80G 
-*  The conda environment defined in environment.yml 
+*  The conda environment defined in environment.yml
+
+First, set up the conda enviroment as follows:<br>
+```
+conda env create -f environment.yml  # create conda env
+conda activate Mind-Animator          # activate conda env  
+```
+
 
 ## <p align="center">  Dataset downloading and preparation </p> 
 
@@ -50,8 +57,11 @@ conda activate BLIP2
 python video_captioning.py --Train_video_path_root "path/to/Train_frames_path" --Train_captions_save_path "path/to/Train_frames_path" --Test_video_path_root "path/to/Test_frames_path" --Test_captions_save_path "path/to/Test_frames_path"
 conda deactivate BLIP2
 ```
+* Extract the voxels within the fMRI data that are indicative of activation in the visual cortex.
 
-
+```
+python 
+```
 
 
 
