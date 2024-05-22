@@ -109,8 +109,13 @@ python Text_condition.py --Train_captions_save_path "path/to/Train_frames_path" 
 python CLIP_feature.py --Train_captions_save_path "path/to/Train_frames_path" --Train_text_CLIPfeature_save_path "path/to/Train_text_CLIP_512" --Train_frames_save_path "path/to/Train_frames_path" --Train_img_CLIPfeature_save_path "path/to/Train_img_CLIP_512" --Test_captions_save_path "path/to/Test_frames_path" --Test_text_CLIPfeature_save_path "path/to/Test_text_CLIP_512" --Test_frames_save_path "path/to/Test_frames_path" --Test_img_CLIPfeature_save_path "path/to/Test_img_CLIP_512" 
 ```
 
+### <p align="center">  Structure and Motion Feature Extraction </p> 
 
+Run the following code to extract the structural information and consistent motion information from the video using a pre-trained VQVAE.
 
+```
+python Structure_feature.py --target_file_root "path/to/{}_video_path"
+```
 
 
 
