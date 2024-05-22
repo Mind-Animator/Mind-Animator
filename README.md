@@ -93,12 +93,15 @@ python fMRI_preparation_FSLR.py --fMRI_volumes_root "path/to/CC2017_Purdue" --ra
 ```
 
 
+## <p align="center">  Feature Extraction </p> 
 
+### <p align="center">  Semantic Feature Extraction </p> 
 
+* Before extracting the text conditions, it is necessary to establish several directories in advance to store the following data: the text condition for the training set (Train_condition) and the text condition for the test set (Test_condition).
 
-
-
-
+```
+python Text_condition.py --Train_captions_save_path "path/to/Train_frames_path" --Train_text_condition_save_path "path/to/Train_condition" --Test_captions_save_path "path/to/Test_frames_path" --Test_text_condition_save_path "path/to/Test_condition"
+```
 
 
 
