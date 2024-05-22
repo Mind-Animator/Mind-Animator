@@ -57,10 +57,10 @@ conda activate BLIP2
 python video_captioning.py --Train_video_path_root "path/to/Train_frames_path" --Train_captions_save_path "path/to/Train_frames_path" --Test_video_path_root "path/to/Test_frames_path" --Test_captions_save_path "path/to/Test_frames_path"
 conda deactivate BLIP2
 ```
-* Extract the voxels within the fMRI data that are indicative of activation in the visual cortex.
+* Extract the voxels within the fMRI data that are indicative of activation in the visual cortex. You are required to create directories in advance for each subject to store the following pre-processed data: fMRI data for individual trails of the training set (Train_fMRI_singletrail), averaged fMRI data across multiple trails of the training set (Train_fMRI_multitrail_average), averaged fMRI data across multiple trails of the test set (Test_fMRI_multitrail_average), and mask files (mask_save_root).
 
 ```
-python 
+python fMRI_preparation_FSLR.py --fMRI_volumes_root "path/to/CC2017_Purdue" --raw_train_data_root "path/to/Train_fMRI_singletrail" --averaged_train_data_root "path/to/Train_fMRI_multitrail_average" --averaged_test_data_root "path/to/Test_fMRI_multitrail_average" --mask_save_root "path/to/mask_save_root"
 ```
 
 
