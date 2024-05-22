@@ -38,6 +38,9 @@ This code was developed and tested with:
     python cut_video.py --source_file_root "path/to/your/root/stimuli" --target_file_root_Train "path/to/Train_video_path" --target_file_root_Test "path/to/Test_video_path"
 ```
 
+```
+    get_video_frames.py --Train_videopath_root "path/to/Train_video_path" --Train_target_root "path/to/Train_frames_path" --Test_videopath_root "path/to/Test_video_path" --Test_target_root "path/to/Test_frames_path"
+```
 * 
 
 
