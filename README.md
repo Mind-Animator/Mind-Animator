@@ -1,4 +1,15 @@
 # <p align="center"> Mind-Animator </p>
+
+## <p align="center"> The human brain's comprehension of dynamic visual scenes </p>
+
+When receiving dynamic visual information, human brain gradually comprehends low-level **structural** details such as position, shape and color in the primary visual cortex, discerns **motion** information, and ultimately constructs high-level **semantic** information in the higher visual cortex, such as an overall description of the scene.
+
+<div align=center>
+<img src="https://github.com/Mind-Animator/Mind-Animator/blob/main/imgs/decouple.png">
+</div>
+
+
+
 ## <p align="center"> TODOList </p>
 - [x] Reorganize all the code.
 - [x] Test the data preprocessing code for CC2017 dataset.
