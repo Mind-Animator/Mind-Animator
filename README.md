@@ -29,8 +29,9 @@ This code was developed and tested with:
 #### <p align="center">  CC2017  dataset </p> 
 * After downloading the CC2017 dataset, you will obtain a folder organized as shown in the figure. In this project, we utilize the fMRI data located within the cifti folder.
 
+<div align=center>
 ![](https://github.com/Zuskd/Mind-Animator/blob/main/imgs/folder.png)
-
+</div>
 
 * Segment the video into 2-second clips and downsample the frame rate of each segment to 4 Hz. You are required to initially create the following four directories for the respective storage purposes: one for the training set video segments (Train_video_path), another for the training set video frames (Train_frames_path), a third for the testing set video segments (Test_video_path), and a fourth for the testing set video frames (Test_frames_path).<br>
 ```
