@@ -31,7 +31,6 @@ This code was developed and tested with:
 
 ![](https://github.com/Zuskd/Mind-Animator/blob/main/imgs/folder.png)
 
-* To label each video segment with text captions, you should first install and run the BLIP2 project. https://github.com/salesforce/LAVIS/tree/main/projects/blip2 <br>
 
 * Segment the video into 2-second clips and downsample the frame rate of each segment to 4 Hz. You are required to initially create the following four directories for the respective storage purposes: one for the training set video segments (Train_video_path), another for the training set video frames (Train_frames_path), a third for the testing set video segments (Test_video_path), and a fourth for the testing set video frames (Test_frames_path).<br>
 ```
@@ -41,7 +40,16 @@ This code was developed and tested with:
 ```
     get_video_frames.py --Train_videopath_root "path/to/Train_video_path" --Train_target_root "path/to/Train_frames_path" --Test_videopath_root "path/to/Test_video_path" --Test_target_root "path/to/Test_frames_path"
 ```
-* 
+
+ 
+* To label each video segment with text captions, you should first install and run the BLIP2 project. https://github.com/salesforce/LAVIS/tree/main/projects/blip2 <br>
+```
+cd path/to/BLIP2
+conda activate BLIP2
+video_captioning.py
+conda deactivate BLIP2
+
+```
 
 
 
