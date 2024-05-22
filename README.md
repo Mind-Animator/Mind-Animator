@@ -10,12 +10,12 @@
 - [ ] Release the checkpoints of Mind-Animator.
 
 ## <p align="center">  Preliminaries  </p> 
-This code was developed and tested with:
+<p align="center"> This code was developed and tested with: </p> 
 
-*  Python version 3.9.16
-*  PyTorch version 1.12.1
-*  A100 80G
-*  The conda environment defined in environment.yml
+<p align="center"> *  Python version 3.9.16 </p> 
+<p align="center"> *  PyTorch version 1.12.1 </p> 
+<p align="center"> *  A100 80G </p> 
+<p align="center"> *  The conda environment defined in environment.yml </p> 
 
 ## <p align="center">  Dataset downloading and preparation </p> 
 
