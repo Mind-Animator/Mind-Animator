@@ -1,5 +1,5 @@
 # Mind-Animator
-## TODOList
+## <p> TODOList </p>
 - [x] Reorganize all the code.
 - [x] Test the data preprocessing code for CC2017 dataset.
 - [ ] Upload the data preprocessing code for CC2017 dataset.
@@ -9,9 +9,13 @@
 - [ ] Release the reconstruction results of Mind-Animator on all test sets.
 - [ ] Release the checkpoints of Mind-Animator.
 
-## Preliminaries
+## <p>  Preliminaries  </p> 
 This code was developed and tested with:
-·
+
+*  Python version 3.9.16
+*  PyTorch version 1.12.1
+*  A100 80G
+*  The conda environment defined in environment.yml
 
 
 
