@@ -28,7 +28,10 @@ This code was developed and tested with:
 ### <p align="center">  Data preparation </p> 
 #### <p align="center">  CC2017  dataset </p> 
 * After downloading the CC2017 dataset, you will obtain a folder organized as shown in the figure. In this project, we utilize the fMRI data located within the cifti folder.
-* ![](https://github.com/Zuskd/Mind-Animator/blob/main/imgs/folder.png)
+
+![](https://github.com/Zuskd/Mind-Animator/blob/main/imgs/folder.png)
+
+* To label each video segment with text captions, you should first install and run the BLIP2 project. https://github.com/salesforce/LAVIS/tree/main/projects/blip2 <br>
 
 
 
