@@ -103,6 +103,18 @@ python fMRI_preparation_FSLR.py --fMRI_volumes_root "path/to/CC2017_Purdue" --ra
 python Text_condition.py --Train_captions_save_path "path/to/Train_frames_path" --Train_text_condition_save_path "path/to/Train_condition" --Test_captions_save_path "path/to/Test_frames_path" --Test_text_condition_save_path "path/to/Test_condition"
 ```
 
+* Before extracting the CLIP features, it is necessary to first create the following directories to store the extracted features: image features of the training set (Train_img_CLIP_512), text features of the training set (Train_text_CLIP_512), image features of the test set (Test_img_CLIP_512), and text features of the test set (Test_text_CLIP_512).
+
+```
+python CLIP_feature.py --Train_captions_save_path "path/to/Train_frames_path" --Train_text_CLIPfeature_save_path "path/to/Train_text_CLIP_512" --Train_frames_save_path "path/to/Train_frames_path" --Train_img_CLIPfeature_save_path "path/to/Train_img_CLIP_512" --Test_captions_save_path "path/to/Test_frames_path" --Test_text_CLIPfeature_save_path "path/to/Test_text_CLIP_512" --Test_frames_save_path "path/to/Test_frames_path" --Test_img_CLIPfeature_save_path "path/to/Test_img_CLIP_512" 
+```
+
+
+
+
+
+
+
 
 
 
