@@ -1,4 +1,4 @@
-# Mind-Animator
+# <p align="center"> Mind-Animator </p>
 ## <p align="center"> TODOList </p>
 - [x] Reorganize all the code.
 - [x] Test the data preprocessing code for CC2017 dataset.
