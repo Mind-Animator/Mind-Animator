@@ -16,6 +16,17 @@ When receiving dynamic visual information, human brain gradually comprehends low
 
 The overall architecture of Mind-Animator, a two-stage video reconstruction model based on fMRI. Three decoders are trained during the **fMRI-to-feature** stage to disentangle semantic, structural, and motion feature from fMRI, respectively.  In the **feature-to-video** stage, the decoded information is input into an inflated Text-to-Image (T2I) model for video reconstruction.
 
+## <p align="center"> Experiments </p>
+
+<div align=center>
+<img src="https://github.com/Mind-Animator/Mind-Animator/blob/main/imgs/results.png">
+</div>
+
+<div align=center>
+<img src="https://github.com/Mind-Animator/Mind-Animator/blob/main/imgs/results2.png">
+</div>
+
+
 
 ## <p align="center"> TODOList </p>
 - [x] Reorganize all the code.
