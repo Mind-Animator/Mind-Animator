@@ -8,3 +8,10 @@
 - [ ] Upload the project code for Mind-Animator.
 - [ ] Release the reconstruction results of Mind-Animator on all test sets.
 - [ ] Release the checkpoints of Mind-Animator.
+
+## Preliminaries
+This code was developed and tested with:
+·
+
+
+
