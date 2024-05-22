@@ -2,12 +2,19 @@
 
 ## <p align="center"> The human brain's comprehension of dynamic visual scenes </p>
 
-When receiving dynamic visual information, human brain gradually comprehends low-level **structural** details such as position, shape and color in the primary visual cortex, discerns **motion** information, and ultimately constructs high-level **semantic** information in the higher visual cortex, such as an overall description of the scene.
-
 <div align=center>
 <img src="https://github.com/Mind-Animator/Mind-Animator/blob/main/imgs/decouple.png">
 </div>
 
+When receiving dynamic visual information, human brain gradually comprehends low-level **structural** details such as position, shape and color in the primary visual cortex, discerns **motion** information, and ultimately constructs high-level **semantic** information in the higher visual cortex, such as an overall description of the scene.
+
+## <p align="center"> The overall architecture of Mind-Animator </p>
+
+<div align=center>
+<img src="https://github.com/Mind-Animator/Mind-Animator/blob/main/imgs/overview.png">
+</div>
+
+The overall architecture of Mind-Animator, a two-stage video reconstruction model based on fMRI. Three decoders are trained during the **fMRI-to-feature** stage to disentangle semantic, structural, and motion feature from fMRI, respectively.  In the **feature-to-video** stage, the decoded information is input into an inflated Text-to-Image (T2I) model for video reconstruction.
 
 
 ## <p align="center"> TODOList </p>
