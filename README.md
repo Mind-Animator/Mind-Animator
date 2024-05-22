@@ -19,7 +19,32 @@ This code was developed and tested with:
 
 ## <p>  Dataset downloading and preparation </p> 
 
+### <p>  Dataset downloading </p> 
+
 **CC2017  dataset** https://purr.purdue.edu/publications/2809/1  <br>
 **HCP dataset** https://www.humanconnectome.org/  <br>
 **Algonauts2021 dataset** http://algonauts.csail.mit.edu/2021/index.html  <br>
+
+### <p>  Data preparation </p> 
+#### <p>  CC2017  dataset </p> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
