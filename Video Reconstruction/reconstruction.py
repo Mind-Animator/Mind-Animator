@@ -51,41 +51,6 @@ def make_model( N=2, d_model=4096*4, d_ff=768, h=8, dropout=0.1):
             nn.init.xavier_uniform(p)
     return CMG_model
 
-def reconstructing_videos(subj_ID, test_src, test_gts, Semantic_model, Structure_model, CMG_model, video_save_root):
-    fMRI_ = torch.tensor(test_src, dtype=torch.float32).to(device)
-    for video_ID in tqdm(range(1200)):
-        fMRI = fMRI_[video_ID:video_ID + 1, :]
-
-        first_frame = Structure_model(fMRI).to(torch.float32)
-        latents = rearrange(
-            greedy_decode(first_frame=first_frame, model=CMG_model, src=fMRI, src_mask=None, max_len=8,
-                          mask_ratio=0), "b f (c h w) -> b c f h w ", f=8, c=4, h=64, w=64)  # .view(-1,4,8,32,32)
-        ddim_inv_latent = \
-        ddim_inversion(inference_pipeline, ddim_inv_scheduler, video_latent=latents, num_inv_steps=50, prompt="")[
-            -1].to(weight_dtype)
-
-        noise = torch.randn_like(latents)
-        timesteps = torch.tensor([200]).long()
-        noisy_latents = noise_scheduler.add_noise(ddim_inv_latent, noise, timesteps)
-
-        # semantic decoder----------------------------------------------------------------------------------------------------------------------------------------
-        cls = np.expand_dims(np.load('/nfs/diskstation/DataStation/reconstruction_results/cls.npy'), 0)
-        _, sem = Semantic_model(fMRI)
-        sem = sem.cpu().detach().numpy()
-        prompt = torch.tensor(np.concatenate([cls, sem], axis=1), dtype=torch.float32).to(device)
-
-        # --------------------------------------------------------------------------------------------------------------------------------------
-        output_dir1 = video_save_root + '/sub{}/recons_only_n200'.format(subj_ID)
-        output_dir2 = video_save_root + '/sub{}/recons_and_gt_n200'.format(subj_ID)
-
-        sample = inference_pipeline(prompt, generator=generator, latents=noisy_latents).videos
-        gt = test_gts[video_ID:video_ID + 1, :, :, :, :]
-
-        save_videos_grid(sample, output_dir1 + '/test{}.gif'.format(video_ID + 1))
-        save_videos_grid(torch.concat([gt, sample], dim=0), output_dir2 + '/test_and_gt{}.gif'.format(video_ID + 1))
-    return
-
-
 noise_scheduler = DDPMScheduler.from_pretrained("/data0/home/Datastation/checkpoints/scheduler")
 inference_scheduler = DDIMScheduler.from_pretrained("/data0/home/Datastation/checkpoints/scheduler")
 tokenizer = CLIPTokenizer.from_pretrained("/data0/home/Datastation/checkpoints/tokenizer")
@@ -123,6 +88,41 @@ CMG_model.eval()
 
 fMRI_data = np.load(args.fMRI_data_path+ '/Sub_{}/'.format(args.subj_ID) +  '/masked4500_test_data.npy')
 test_gts = torch.tensor(np.load('/nfs/diskstation/DataStation/reconstruction_results/test_gt_npy/test_groundtruth.npy'), dtype=torch.float32)
+
+def reconstructing_videos(subj_ID, test_src, test_gts, Semantic_model, Structure_model, CMG_model, video_save_root):
+    fMRI_ = torch.tensor(test_src, dtype=torch.float32).to(device)
+    for video_ID in tqdm(range(1200)):
+        fMRI = fMRI_[video_ID:video_ID + 1, :]
+
+        first_frame = Structure_model(fMRI).to(torch.float32)
+        latents = rearrange(
+            greedy_decode(first_frame=first_frame, model=CMG_model, src=fMRI, src_mask=None, max_len=8,
+                          mask_ratio=0), "b f (c h w) -> b c f h w ", f=8, c=4, h=64, w=64)  # .view(-1,4,8,32,32)
+        ddim_inv_latent = \
+        ddim_inversion(inference_pipeline, ddim_inv_scheduler, video_latent=latents, num_inv_steps=50, prompt="")[
+            -1].to(weight_dtype)
+
+        noise = torch.randn_like(latents)
+        timesteps = torch.tensor([200]).long()
+        noisy_latents = noise_scheduler.add_noise(ddim_inv_latent, noise, timesteps)
+
+        # semantic decoder----------------------------------------------------------------------------------------------------------------------------------------
+        cls = np.expand_dims(np.load('/nfs/diskstation/DataStation/reconstruction_results/cls.npy'), 0)
+        _, sem = Semantic_model(fMRI)
+        sem = sem.cpu().detach().numpy()
+        prompt = torch.tensor(np.concatenate([cls, sem], axis=1), dtype=torch.float32).to(device)
+
+        # --------------------------------------------------------------------------------------------------------------------------------------
+        output_dir1 = video_save_root + '/sub{}/recons_only_n200'.format(subj_ID)
+        output_dir2 = video_save_root + '/sub{}/recons_and_gt_n200'.format(subj_ID)
+
+        sample = inference_pipeline(prompt, generator=generator, latents=noisy_latents).videos
+        gt = test_gts[video_ID:video_ID + 1, :, :, :, :]
+
+        save_videos_grid(sample, output_dir1 + '/test{}.gif'.format(video_ID + 1))
+        save_videos_grid(torch.concat([gt, sample], dim=0), output_dir2 + '/test_and_gt{}.gif'.format(video_ID + 1))
+    return
+
 
 if __name__ == "__main__":
     reconstructing_videos(subj_ID = args.subj_ID, test_src = fMRI_data, test_gts = test_gts, Semantic_model = Semantic_model, Structure_model = Structure_model, CMG_model = CMG_model, video_save_root = args.results_save_root)
