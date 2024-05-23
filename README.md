@@ -125,7 +125,7 @@ python Structure_feature.py --target_file_root "path/to/{}_video_path"
 
 ## <p align="center">  Video Reconstruction </p> 
 
-Run the following code snippet to generate reconstruction results for each subject's test dataset. Please adjust the subj_ID variable accordingly (valid options include: 1, 2, 3).
+Run the following code snippet to generate reconstruction results for each subject's test dataset. Please adjust the subj_ID variable accordingly (valid options include: 1, 2, 3).  To ensure that the reconstruction results for each subject are stored in the correct location, please modify the output_dir1 and output_dir2 variables within the reconstruction.py file accordingly.
 
 ```
 cd path/to/project/Mind-Animator/Video Reconstruction
