@@ -72,6 +72,7 @@ cd path/to/project/Mind-Animator
 
 * Segment the video into 2-second clips and downsample the frame rate of each segment to 4 Hz. You are required to initially create the following four directories for the respective storage purposes: one for the training set video segments (Train_video_path), another for the training set video frames (Train_frames_path), a third for the testing set video segments (Test_video_path), and a fourth for the testing set video frames (Test_frames_path).<br>
 ```
+    cd path/to/project/Mind-Animator/Data preparation
     python cut_video.py --source_file_root "path/to/your/root/stimuli" --target_file_root_Train "path/to/Train_video_path" --target_file_root_Test "path/to/Test_video_path"
 ```
 
@@ -82,7 +83,6 @@ cd path/to/project/Mind-Animator
  
 * To label each video segment with text captions, you should first install and run the BLIP2 project. https://github.com/salesforce/LAVIS/tree/main/projects/blip2 <br>
 ```
-cd path/to/BLIP2
 conda activate BLIP2
 python video_captioning.py --Train_video_path_root "path/to/Train_frames_path" --Train_captions_save_path "path/to/Train_frames_path" --Test_video_path_root "path/to/Test_frames_path" --Test_captions_save_path "path/to/Test_frames_path"
 conda deactivate BLIP2
@@ -101,6 +101,7 @@ python fMRI_preparation_FSLR.py --fMRI_volumes_root "path/to/CC2017_Purdue" --ra
 * Before extracting the text conditions, it is necessary to establish several directories in advance to store the following data: the text condition for the training set (Train_condition) and the text condition for the test set (Test_condition).
 
 ```
+cd path/to/project/Mind-Animator/Feature extraction
 python Text_condition.py --Train_captions_save_path "path/to/Train_frames_path" --Train_text_condition_save_path "path/to/Train_condition" --Test_captions_save_path "path/to/Test_frames_path" --Test_text_condition_save_path "path/to/Test_condition"
 ```
 
@@ -120,16 +121,15 @@ python Structure_feature.py --target_file_root "path/to/{}_video_path"
 
 ## <p align="center">  Feature Decoding </p> 
 
-### <p align="center">  Semantic Feature Decoding </p> 
-
-### <p align="center">  Structure Feature Decoding </p> 
-
-### <p align="center">  Motion Feature Decoding </p> 
-
 
 
 ## <p align="center">  Video Reconstruction </p> 
 
+
+```
+cd path/to/project/Mind-Animator/Video Reconstruction
+python reconstruction.py --subj_ID 1 --fMRI_data_path "path/to/Test_fMRI_multitrail_average" --Semantic_model_dir "path/to/Semantic_decoder" --Structure_model_dir "path/to/Structure_decoder" --CMG_model_dir "path/to/CMG_decoder" --results_save_root "path/to/results_save_root"
+```
 
 
 ## <p align="center">  Calculate the Evaluation Metrics </p> 
