@@ -118,13 +118,27 @@ Run the following code to extract the structural information and consistent moti
 python Structure_feature.py --target_file_root "path/to/{}_video_path"
 ```
 
+## <p align="center">  Feature Decoding </p> 
+
+### <p align="center">  Semantic Feature Decoding </p> 
+
+### <p align="center">  Structure Feature Decoding </p> 
+
+### <p align="center">  Motion Feature Decoding </p> 
 
 
 
+## <p align="center">  Video Reconstruction </p> 
 
 
 
+## <p align="center">  Calculate the Evaluation Metrics </p> 
 
+### <p align="center">  Semantic-level Metrics </p> 
+
+### <p align="center">  Pixel-level Metrics </p> 
+
+### <p align="center">  Spatiotemporal-level Metric </p> 
 
 
 
