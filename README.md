@@ -34,8 +34,7 @@ The overall architecture of Mind-Animator, a two-stage video reconstruction mode
 - [ ] Upload the data preprocessing code for CC2017 dataset.
 - [x] Upload the code of evaluation metrics.
 - [ ] Test the project code for Mind-Animator.
-- [ ] Upload the project code for Mind-Animator.
-- [ ] Release the reconstruction results of Mind-Animator on all test sets.
+- [x] Upload the project code for Mind-Animator.
 - [ ] Release the checkpoints of Mind-Animator.
 
 ## <p align="center">  Preliminaries  </p> 
