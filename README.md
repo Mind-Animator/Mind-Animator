@@ -135,7 +135,14 @@ python reconstruction.py --subj_ID 1 --fMRI_data_path "path/to/Test_fMRI_multitr
 
 ## <p align="center">  Calculate the Evaluation Metrics </p> 
 
+To calculate the following evaluation metrics, you will first need to download the following models: ViT-Base Patch16 224 (https://huggingface.co/google/vit-base-patch16-224), VideoMAE (https://huggingface.co/MCG-NJU/videomae-base), and ViFi-CLIP (https://github.com/muzairkhattak/ViFi-CLIP).
+
+
 ### <p align="center">  Semantic-level Metrics </p> 
+
+```
+
+```
 
 ### <p align="center">  Pixel-level Metrics </p> 
 
