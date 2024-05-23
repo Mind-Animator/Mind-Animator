@@ -140,15 +140,38 @@ To calculate the following evaluation metrics, you will first need to download t
 
 ### <p align="center">  Semantic-level Metrics </p> 
 
-```
+Run the following code to calculate the 2-way-I and 2-way-V metrics.
 
 ```
+cd path/to/project/Mind-Animator/Evaluation Metrics
+python 2-way-I.py --recons_results_root "path/to/results_save_root"
+python 2-way-V.py --recons_results_root "path/to/results_save_root"
+```
 
+Before calculating VIFI_score, it is necessary to first convert the reconstruction results from the .gif format to the .avi format. Please ensure to create folders in advance to store the .avi format ground truth (gt_avi) , reconstruction results (recons_avi) , and VIFI_score results (VIFI_score_path).
+
+```
+cd path/to/project/Mind-Animator/Evaluation Metrics/ViFi_CLIP
+python gif_to_avi.py --recons_results_root "path/to/results_save_root" --avi_gt_results_root "path/to/gt_avi" --avi_recons_results_root "path/to/recons_avi"
+python VIFI_score.py --avi_gt_results_root "path/to/gt_avi" --avi_recons_results_root "path/to/recons_avi" --VIFICLIP_score_save_root "path/to/VIFI_score_path"
+```
 ### <p align="center">  Pixel-level Metrics </p> 
+
+Run the following code to calculate Pixel-level Metrics.
+
+```
+cd path/to/project/Mind-Animator/Evaluation Metrics
+python Pixel_level_metrics.py --recons_results_root "path/to/results_save_root"
+```
 
 ### <p align="center">  Spatiotemporal-level Metric </p> 
 
+Run the following code to calculate the Spatiotemporal-level Metric.
 
+```
+cd path/to/project/Mind-Animator/Evaluation Metrics
+python ST_level_metric.py --recons_results_root "path/to/results_save_root" --VIFICLIP_score_save_root "path/to/VIFI_score_path"
+```
 
 
 
